@@ -1,26 +1,55 @@
-<form>
-    <h1>Password Generator</h1>
-    <label for="length">Select the lengt of your password: </label>
-    <select name="length" id="length">
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="col-md-9 offset-md-2">
+    <form action="{% url 'idpassword' %}" class="card card-body p-5"
+    style="background-color: rgb(32, 9, 61);">
         
-       
-        <option value="1">1 Characters</option>
-        <option value="2">2 Characters</option>
-        <option value="3">3 Characters</option>
-        <option value="4">4 Characters</option>
-        <option value="5">5 Characters</option>
-        <option value="6">6 Characters</option>
-        <option value="7">7 Characters</option>
-        <option value="8">8 Characters</option>
-        <option value="9">9 Characters</option>
-        <option value="10">10 Characters</option>
+        <h1>Password Generator</h1><br>
+        <label for="length">Select the lengt of your password: </label>
+        <select name="length" id="length" class="form-control">
+            
+           
+            <option value="1">1 Characters</option>
+            <option value="2">2 Characters</option>
+            <option value="3">3 Characters</option>
+            <option value="4">4 Characters</option>
+            <option value="5">5 Characters</option>
+            <option value="6">6 Characters</option>
+            <option value="7">7 Characters</option>
+            <option value="8">8 Characters</option>
+            <option value="9">9 Characters</option>
+            <option value="10">10 Characters</option>
+    
+        </select>
+        <br>
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="uppercase">Uppercase</label>
+            <input class="form-check-input" type="checkbox" name="uppercase" id="upercaseq"><br>
+        </div>
 
-    </select>
-    <label for="uppercase">Uppercase</label>
-    <input type="checkbox" name="uppercase" id="upercaseq">
-    <button>Generate Password</button>
+        
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="specialchar">Special Characters</label>
+            <input class="form-check-input" type="checkbox" name="specialchar" id="upercaseq"><br>
+        </div>
+
+
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="numbers">Numbers</label>
+            <input class="form-check-input" type="checkbox" name="numbers" id="upercaseq"><br>
+        </div>
+      <button class="btn btn-primary">Generated Password</button>
+
+        
+    
+    
+    
+    
+    </form>
 
 
 
+</div>   
 
-</form>
+{% endblock %}
